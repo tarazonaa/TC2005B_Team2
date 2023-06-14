@@ -60,6 +60,7 @@ router.post("/createUser", async (req, res) => {
             });
             return;
         }
+        console.log("User created: ", user_name);
         res.status(200).json({
             msg: "User created",
             data,

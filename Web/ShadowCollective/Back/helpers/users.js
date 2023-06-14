@@ -19,7 +19,6 @@ export async function getUser(user_name) {
 //Create User (user_name, user_password, email, age, user_register)
 export async function addUser(user_name, user_password, email, age) {
     const db = await connectDB();
-
     const [res] = await db.execute(
         `INSERT INTO scollective.USER_INFO(user_name, user_password, email, age) VALUES(\'${user_name}\', \'${user_password}\', \'${email}\', ${age})`
     );
