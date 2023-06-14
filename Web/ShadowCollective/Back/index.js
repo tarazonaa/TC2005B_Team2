@@ -14,11 +14,11 @@ import { ENV, PORT } from "./const.js";
 
 
 // extend the proxy depending on the endpoint
-app.use('/api/users', usersRouter);
-app.use('/api/stats',statsRouter);
-app.use('/api/progress', progressRouter);
-app.use('/api/event', eventRouter);
-app.use('/api/gadget', gadgetRouter);
+app.use('/users', usersRouter);
+app.use('/stats',statsRouter);
+app.use('/progress', progressRouter);
+app.use('/event', eventRouter);
+app.use('/gadget', gadgetRouter);
 
 app.use(express.json());
 app.use(cors());
