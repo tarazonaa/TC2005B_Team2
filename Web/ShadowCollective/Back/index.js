@@ -12,6 +12,7 @@ import cors from "cors";
 import mysql from "mysql2/promise";
 import { ENV, PORT } from "./const.js";
 
+const app = express();
 
 // extend the proxy depending on the endpoint
 app.use('/users', usersRouter);
