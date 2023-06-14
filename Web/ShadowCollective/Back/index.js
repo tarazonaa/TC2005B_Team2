@@ -13,14 +13,6 @@ import mysql from "mysql2/promise";
 import { ENV, PORT } from "./const.js";
 
 const app = express();
-
-// extend the proxy depending on the endpoint
-app.use('/users', usersRouter);
-app.use('/stats',statsRouter);
-app.use('/progress', progressRouter);
-app.use('/event', eventRouter);
-app.use('/gadget', gadgetRouter);
-
 app.use(express.json());
 app.use(cors());
 
@@ -32,6 +24,13 @@ app.get("/", (req, res) => {
 // ----- Body Parser -----
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// ----- Routes -----
+app.use('/users', usersRouter);
+app.use('/stats',statsRouter);
+app.use('/progress', progressRouter);
+app.use('/event', eventRouter);
+app.use('/gadget', gadgetRouter);
 
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en el puerto ${PORT}`);
